@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include('partials/head.ejs')%>
+</head>
+<body>
+
+    <header>
+        <%-include('partials/header.ejs')%>
+    </header>
+
+    <main>
+        <h2>Últimas entradas del blog</h2>
+        <div class="centrador">
+            <% posts.forEach(post => { %>
+                <a href="/entrada/<%=post.id%>">    
+                    <figure>
+                        <img src="<%=post.thumbnail%>" alt="imagen">
+                        <figcaption><%=post.title%></figcaption>
+                    </figure>
+                </a>
+            <% }) %>
+        </div>
+    </main>
+
+    <footer>
+        <%-include('partials/footer.ejs')%>
+    </footer>
+</body>
+</html>
